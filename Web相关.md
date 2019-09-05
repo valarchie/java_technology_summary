@@ -92,7 +92,8 @@ exception 对象的作用是显示异常信息，只有在包含 isErrorPage="tr
     1.jsp经编译后就变成了Servlet.(JSP的本质就是Servlet，JVM只能识别java的类，不能识别JSP的代码,Web容器将JSP的代码编译成
     JVM能够识别的java类)
     2.jsp更擅长表现于页面显示,servlet更擅长于逻辑控制.
-    3.Servlet中没有内置对象，Jsp中的内置对象都是必须通过HttpServletRequest对象，HttpServletResponse对象以及HttpServlet对象得到.
+    3.Servlet中没有内置对象，Jsp中的内置对象都是必须通过HttpServletRequest对象，HttpServletResponse对象以及HttpServlet  
+    对象得到.
     Jsp是Servlet的一种简化，使用Jsp只需要完成程序员需要输出到客户端的内容，Jsp中的Java脚本如何镶嵌到一个类中，由Jsp容器完成。
     而Servlet则是个完整的Java类，这个类的Service方法用于生成对客户端的响应。
     联系：JSP是Servlet技术的扩展，本质上就是Servlet的简易方式。JSP编译后是“类servlet”。Servlet和JSP最主要的不同点在于，
@@ -163,7 +164,11 @@ Java Web开发中的过滤器（filter）是从Servlet 2.3规范开始增加的�
 
     分类及介绍：
     ServletContextListener：用于监听WEB 应用启动和销毁的事件，监听器类需要实现javax.servlet.ServletContextListener 接口。
-    ServletContextAttributeListener：用于监听WEB应用属性改变的事件，包括：增加属性、删除属性、修改属性，监听器类需要实现javax.servlet.ServletContextAttributeListener接口。
-    HttpSessionListener：用于监听Session对象的创建和销毁，监听器类需要实现javax.servlet.http.HttpSessionListener接口或者javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。
-    HttpSessionActivationListener：用于监听Session对象的钝化/活化事件，监听器类需要实现javax.servlet.http.HttpSessionListener接口或者javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。（没用过）
-    HttpSessionAttributeListener：用于监听Session对象属性的改变事件，监听器类需要实现javax.servlet.http.HttpSessionAttributeListener接口。 （没用过）
+    ServletContextAttributeListener：用于监听WEB应用属性改变的事件，包括：增加属性、删除属性、修改属性，监听器类需要实现
+    javax.servlet.ServletContextAttributeListener接口。
+    HttpSessionListener：用于监听Session对象的创建和销毁，监听器类需要实现javax.servlet.http.HttpSessionListener接口或者
+    javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。
+    HttpSessionActivationListener：用于监听Session对象的钝化/活化事件，监听器类需要实现javax.servlet.http.HttpSessionListener
+    接口或者javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。（没用过）
+    HttpSessionAttributeListener：用于监听Session对象属性的改变事件，监听器类需要实现
+    javax.servlet.http.HttpSessionAttributeListener接口。 （没用过）
