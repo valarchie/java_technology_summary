@@ -94,8 +94,8 @@ exception 对象的作用是显示异常信息，只有在包含 isErrorPage="tr
     2.jsp更擅长表现于页面显示,servlet更擅长于逻辑控制.
     3.Servlet中没有内置对象，Jsp中的内置对象都是必须通过HttpServletRequest对象，HttpServletResponse对象以及HttpServlet  
     对象得到.
-    Jsp是Servlet的一种简化，使用Jsp只需要完成程序员需要输出到客户端的内容，Jsp中的Java脚本如何镶嵌到一个类中，由Jsp容器完成。
-    而Servlet则是个完整的Java类，这个类的Service方法用于生成对客户端的响应。
+    Jsp是Servlet的一种简化，使用Jsp只需要完成程序员需要输出到客户端的内容，Jsp中的Java脚本如何镶嵌到一个类中，由Jsp容器
+    完成。而Servlet则是个完整的Java类，这个类的Service方法用于生成对客户端的响应。
     联系：JSP是Servlet技术的扩展，本质上就是Servlet的简易方式。JSP编译后是“类servlet”。Servlet和JSP最主要的不同点在于，
     Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为
     .jsp的文件。JSP侧重于视图，Servlet主要用于控制逻辑
@@ -127,15 +127,15 @@ headerValues、cookie（访问cookie）、applicationScope（访问application�
 requestScope（访问request作用域）、pageScope（访问page作用域）。
 
 用法如下所示：
-    ${pageContext.request.method}
-    ${pageContext["request"]["method"]}
-    ${pageContext.request["method"]}
-    ${pageContext["request"].method}
-    ${initParam.defaultEncoding}
-    ${header["accept-language"]}
-    ${headerValues["accept-language"][0]}
-    ${cookie.jsessionid.value}
-    ${sessionScope.loginUser.username}
+  - ${pageContext.request.method}
+  - ${pageContext["request"]["method"]}
+  - ${pageContext.request["method"]}
+  - ${pageContext["request"].method}
+  - ${initParam.defaultEncoding}
+  - ${header["accept-language"]}
+  - ${headerValues["accept-language"][0]}
+  - ${cookie.jsessionid.value}
+  - ${sessionScope.loginUser.username}
    
 # 11.请说明一下JSP中的静态包含和动态包含的有哪些区别？
 
@@ -168,7 +168,7 @@ Java Web开发中的过滤器（filter）是从Servlet 2.3规范开始增加的�
     javax.servlet.ServletContextAttributeListener接口。
     HttpSessionListener：用于监听Session对象的创建和销毁，监听器类需要实现javax.servlet.http.HttpSessionListener接口或者
     javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。
-    HttpSessionActivationListener：用于监听Session对象的钝化/活化事件，监听器类需要实现javax.servlet.http.HttpSessionListener
-    接口或者javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。（没用过）
+    HttpSessionActivationListener：用于监听Session对象的钝化/活化事件，监听器类需要实现javax.servlet.http.
+    HttpSessionListener接口或者javax.servlet.http.HttpSessionActivationListener接口，或者两个都实现。（没用过）
     HttpSessionAttributeListener：用于监听Session对象属性的改变事件，监听器类需要实现
     javax.servlet.http.HttpSessionAttributeListener接口。 （没用过）
