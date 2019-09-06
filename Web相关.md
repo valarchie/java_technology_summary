@@ -198,3 +198,29 @@ forward是服务器内部转发，redirect是服务器让客户端转发。redir
 # 16.servlet生命周期，是否单例，为什么是单例。
 生命周期：加载并实例化、初始化、请求处理、销毁。  是单例。为了有效利用JVM允许多个线程访问同一个实例的特性，  
 来提高服务器性能。在非分布式系统中，Servlet容器只会维护一个Servlet的实例。
+
+
+# 17.说出Servlet的生命周期，并说出Servlet和CGI的区别。
+Servlet 生命周期  
+1、加载  2、实例化  3、初始化  4、处理请求  5、销毁
+区别：  
+Servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，  
+而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。  
+
+
+# 18.Servlet执行时一般实现哪几个方法？
+- public void init(ServletConfig config)  
+- public ServletConfig getServletConfig()  
+- public String getServletInfo()
+- public void service(ServletRequest request,ServletResponse response)
+- public void destroy() 
+
+
+# 19.Servlet 3中的异步处理指的是什么？
+不阻塞用户请求，请求立即得到响应，而处理结果在完成之后再返回给用户。
+
+# 20.服务器收到用户提交的表单数据，到底是调用Servlet的doGet()还是doPost()方法？
+根据用户请求的方法是Get还是POST。
+
+# 21.
+
