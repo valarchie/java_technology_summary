@@ -85,7 +85,8 @@ cookie 对象是Web服务器保存在用户硬盘上的一段文本。唯一的�
 exception 对象的作用是显示异常信息，只有在包含 isErrorPage="true" 的页面中才可以被使用。
 ```
 
-
+# JSP的四个域对象的作用范围？
+application、session、request、page
 
 # 6.JSP 和 Servlet 有哪些相同点和不同点，他们之间的联系是什么？
     jsp和servlet的区别和联系：
@@ -195,10 +196,17 @@ forward是服务器内部转发，redirect是服务器让客户端转发。redir
 还没有收到响应时，就返回504错误。
 
 
+# 转发和重定向有什么区别？
+转发是服务端的行为，重定向是客户端的行为。
+
 # 16.servlet生命周期，是否单例，为什么是单例。
 生命周期：加载并实例化、初始化、请求处理、销毁。  是单例。为了有效利用JVM允许多个线程访问同一个实例的特性，  
 来提高服务器性能。在非分布式系统中，Servlet容器只会维护一个Servlet的实例。
 
+
+# 什么是Servlet?
+servlet是运行于tomcat容器或其他servlet容器中的WEB组件，用于处理请求和响应请求。所以我们就不需要关心  
+如何接受请求和响应请求，只需要关心于我们的业务逻辑。
 
 # 17.说出Servlet的生命周期，并说出Servlet和CGI的区别。
 Servlet 生命周期  
