@@ -9,4 +9,10 @@ BIO是同步阻塞IO，NIO是同步非阻塞IO，AIO是异步非阻塞IO；三�
 操作。
 
 
-# 
+# 讲讲IO里面的常见类，字节流、字符流、接口、实现类
+InputStream和OutStream属于字节流。底下有ByteArray、Object、File等实现类，以及Buffer增强。
+Reader和Writer属于字符流。底下有String、File、Buffer等实现。
+
+# 讲讲NIO。
+NIO通过观测多个缓冲区，哪个缓冲区就绪的话，就处理哪个缓冲区。原本的IO会对一个缓冲区等待，效率比较慢，  
+而现在NIO是对一堆缓冲区进行等待，效率比较高。
