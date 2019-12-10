@@ -285,6 +285,11 @@ DAO 模式提供了访问关系型数据库系统所需操作的接口，将数�
     （ServletResponse）的setContentType(String)方法可以设置响应内容的类型，当然也可以通过HttpServletResponse
     对象的setHeader(String, String)方法来设置。
 
+# GBK和UTF8编码的区别？
+1. GBK包含全部中文字符；UTF-8则包含全世界所有国家需要用到的字符。
+2. GBK是在国家标准GB2312基础上扩容后兼容GB2312的标准（好像还不是国家标准）；  
+而UTF-8编码的文字可以在各国各种支持UTF8字符集的浏览器上显示。
+
 # 26.什么是WebService?
     WebService是一种跨编程语言和跨操作系统平台的远程调用技术。
     WebService就是一个应用程序向外界暴露出一个能通过Web进行调用的API，也就是说能用编程的方法通过Web来调用这个
