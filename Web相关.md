@@ -1,21 +1,22 @@
+- 该部分内容已比较老旧
 
-# 1.启动项目时如何实现不在链接里输入项目名就能启动?
+## 启动项目时如何实现不在链接里输入项目名就能启动?
 修改Tomcat配置文件 server.xml。将Context标签内的path属性改为“/”即可。
 
-# 2.一分钟之内只能处理1000个请求，你怎么实现，手撕代码?
+## 一分钟之内只能处理1000个请求，你怎么实现，手撕代码?
 每处理完一个请求，就往Application作用域内的一个LinkedBlockingQueue中添加一个时间戳。
 每接收到一个请求的时候，就先判断Application作用域当中的LinkedBlockingQueue当中的size是否大于1000，判断前先remove  
 掉60秒之前的时间戳。
 
 
-# 3.什么时候用assert？
+## 什么时候用assert？
 在开发和测试过程中，很多时候我们需要对某些场景进行判断，当这个判断满足我们预期的答案，才继续往下执行，否则终止程序或者发出警告。  
 比较常用在单元测试。
 
-# 4.Java应用服务器有哪些？
+## Java应用服务器有哪些？
 WebLogic， WebSphere， Jboss， Tomcat
 
-# 5.JSP内置对象及常用方法？
+## JSP内置对象及常用方法？
 
 1. request对象。
 ```
@@ -85,10 +86,10 @@ cookie 对象是Web服务器保存在用户硬盘上的一段文本。唯一的�
 exception 对象的作用是显示异常信息，只有在包含 isErrorPage="true" 的页面中才可以被使用。
 ```
 
-# JSP的四个域对象的作用范围？
+## JSP的四个域对象的作用范围？
 application、session、request、page
 
-# 6.JSP 和 Servlet 有哪些相同点和不同点，他们之间的联系是什么？
+## JSP 和 Servlet 有哪些相同点和不同点，他们之间的联系是什么？
     jsp和servlet的区别和联系：
     1.jsp经编译后就变成了Servlet.(JSP的本质就是Servlet，JVM只能识别java的类，不能识别JSP的代码,Web容器将JSP的代码编译成
     JVM能够识别的java类)
@@ -101,7 +102,7 @@ application、session、request、page
     Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为
     .jsp的文件。JSP侧重于视图，Servlet主要用于控制逻辑
     
-# 7.四种会话跟踪技术
+## ★四种会话跟踪技术
 
 1. 隐藏表单域：<input type="hidden">，非常适合步需要大量数据存储的会话应用。
 2. URL重写: URL可以在后面附加参数抛回给客户端，客户端在下一次请求携带回给服务器。
@@ -111,17 +112,21 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 在客户端计算机重启后它仍可以保留其值。
 4. Session：使用 setAttribute(String str,Object obj)方法将对象捆绑到一个会话
 
-# 8.说说weblogic中一个Domain的缺省目录结构?比如要将一个简单的helloWorld.jsp放入何目录下,然后在浏览器上就可打入主机？
+## 说说weblogic中一个Domain的缺省目录结构?比如要将一个简单的helloWorld.jsp放入何目录下,然后在浏览器上就可打入主机？
 Domain目录\服务器目录\applications，将应用目录放在此目录下将可以作为应用访问，如果是web应用，应用目录需要满足Web应用  
 目录要求，jsp文件可以直接放在应用目录中，JavaBean需要放在应用目录的WEB-INF目录的classes目录中，设置服务器的缺省应用将  
 可以实现在浏览器上无需输入应用名。
 
-# 9.jsp有哪些动作?作用分别是什么?
-JSP 共有以下6种基本动作 jsp:include：在页面被请求的时候引入一个文件。 jsp:useBean：寻找或者实例化一个JavaBean。   
-jsp:setProperty：设置JavaBean的属性。 jsp:getProperty：输出某个JavaBean的属性。 jsp:forward：把请求转到一个新的页面。  
-jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。 
+## jsp有哪些动作?作用分别是什么?
+JSP 共有以下6种基本动作 
+- jsp:include：在页面被请求的时候引入一个文件。 
+- jsp:useBean：寻找或者实例化一个JavaBean。   
+- jsp:setProperty：设置JavaBean的属性。 
+- jsp:getProperty：输出某个JavaBean的属性。 
+- jsp:forward：把请求转到一个新的页面。  
+- jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。 
 
-# 10.说一下表达式语言（EL）的隐式对象及其作用
+## 说一下表达式语言（EL）的隐式对象及其作用
 
 EL的隐式对象包括：pageContext、initParam（访问上下文参数）、param（访问请求参数）、paramValues、header（访问请求头）、  
 headerValues、cookie（访问cookie）、applicationScope（访问application作用域）、sessionScope（访问session作用域）、  
@@ -138,7 +143,7 @@ requestScope（访问request作用域）、pageScope（访问page作用域）。
   - ${cookie.jsessionid.value}
   - ${sessionScope.loginUser.username}
    
-# 11.请说明一下JSP中的静态包含和动态包含的有哪些区别？
+## 请说明一下JSP中的静态包含和动态包含的有哪些区别？
 
 1.两者格式不同，静态包含：<%@ include file="文件" %>，而动态包含：<jsp : include page = "文件" />。
 2.包含时间不同，静态包含是先将几个文件合并，然后再被编译，缺点就是如果含有相同的标签，会出错。动态包含是页面被请求时编译，  
@@ -147,7 +152,7 @@ requestScope（访问request作用域）、pageScope（访问page作用域）。
 4.传递参数不同，动态包含能够传递参数，而静态包含不能 
 
 
-# 12.过滤器有哪些作用和用法？
+## ★过滤器有哪些作用和用法？
 Java Web开发中的过滤器（filter）是从Servlet 2.3规范开始增加的功能，并在Servlet 2.4规范中得到增强。对Web应用来说，  
 过滤器是一个驻留在服务器端的Web组件，它可以截取客户端和服务器之间的请求与响应信息，并对这些信息进行过滤。当Web容器  
 接受到一个对资源的请求时，它将判断是否有过滤器与这个资源相关联。如果有，那么容器将把请求交给过滤器进行处理。在过滤器中，  
@@ -157,13 +162,13 @@ Java Web开发中的过滤器（filter）是从Servlet 2.3规范开始增加的�
 常见的过滤器用途主要包括：对用户请求进行统一认证、对用户的访问请求进行记录和审核、对用户发送的数据进行过滤或替换、  
 转换图象格式、对响应内容进行压缩以减少传输量、对请求或响应进行加解密处理、触发资源访问事件、对XML的输出应用XSLT等。
 
-# 拦截器与过滤器的区别？
+## ★拦截器与过滤器的区别？
 拦截器基于反射，过滤器基于函数回调。
 拦截器依赖于controller，过滤器依赖于servlet。
 总而言之就是请求进来  fileter-->servlet-->inteceptor-->controller
 
 
-# 13.javaweb当中的监听器的作用？
+## javaweb当中的监听器的作用？
 就是对项目起到监听的作用，它能感知到包括request(请求域)，session(会话域)和applicaiton(应用程序)的初始化和属性的变化，  
 活动在整个request和response周期中；其实监听器就是一种观察者模式。Servlet监听器用于监听一些重要事件的发生，监听器对象  
 可以在事情发生前、发生后可以做一些必要的处理。下面将介绍几种常用的监听器
@@ -179,12 +184,12 @@ Java Web开发中的过滤器（filter）是从Servlet 2.3规范开始增加的�
     HttpSessionAttributeListener：用于监听Session对象属性的改变事件，监听器类需要实现
     javax.servlet.http.HttpSessionAttributeListener接口。 （没用过）
     
-# 14.web.xml文件中可以配置哪些内容？
+## web.xml文件中可以配置哪些内容？
 web.xml用于配置Web应用的相关信息，如：监听器（listener）、过滤器（filter）、 Servlet、相关参数、会话超时时间、  
 安全验证方式、错误页面等。
 
 
-# 15.forward与redirect区别，说一下你知道的状态码，redirect的状态码是多少？
+## ★forward与redirect区别，说一下你知道的状态码，redirect的状态码是多少？
 forward是服务器内部转发，redirect是服务器让客户端转发。redirect的状态码是301/302.
 - 200：表示请求已成功，请求所希望的响应头或数据体将随此响应返回
 - 202：服务器已接受请求，但尚未处理
@@ -201,19 +206,19 @@ forward是服务器内部转发，redirect是服务器让客户端转发。redir
 还没有收到响应时，就返回504错误。
 
 
-# 转发和重定向有什么区别？
+## ★转发和重定向有什么区别？
 转发是服务端的行为，重定向是客户端的行为。
 
-# 16.servlet生命周期，是否单例，为什么是单例。
+## servlet生命周期，是否单例，为什么是单例。
 生命周期：加载并实例化、初始化、请求处理、销毁。  是单例。为了有效利用JVM允许多个线程访问同一个实例的特性，  
 来提高服务器性能。在非分布式系统中，Servlet容器只会维护一个Servlet的实例。
 
 
-# 什么是Servlet?
+## 什么是Servlet?
 servlet是运行于tomcat容器或其他servlet容器中的WEB组件，用于处理请求和响应请求。所以我们就不需要关心  
 如何接受请求和响应请求，只需要关心于我们的业务逻辑。
 
-# 17.说出Servlet的生命周期，并说出Servlet和CGI的区别。
+## 说出Servlet的生命周期，并说出Servlet和CGI的区别。
 Servlet 生命周期  
 1、加载  2、实例化  3、初始化  4、处理请求  5、销毁
 区别：  
@@ -221,7 +226,7 @@ Servlet处于服务器进程中，它通过多线程方式运行其service方法
 而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。  
 
 
-# 18.Servlet执行时一般实现哪几个方法？
+## Servlet执行时一般实现哪几个方法？
 - public void init(ServletConfig config)  
 - public ServletConfig getServletConfig()  
 - public String getServletInfo()
@@ -229,31 +234,32 @@ Servlet处于服务器进程中，它通过多线程方式运行其service方法
 - public void destroy() 
 
 
-# 19.Servlet 3中的异步处理指的是什么？
+## Servlet 3中的异步处理指的是什么？
 不阻塞用户请求，请求立即得到响应，而处理结果在完成之后再返回给用户。
 
-# 20.服务器收到用户提交的表单数据，到底是调用Servlet的doGet()还是doPost()方法？
+## 服务器收到用户提交的表单数据，到底是调用Servlet的doGet()还是doPost()方法？
 根据用户请求的方法是Get还是POST。
 
-# 21.MVC 的各个部分都有那些技术来实现?如何实现?
+## MVC 的各个部分都有那些技术来实现?如何实现?
 MVC 是 Model－View－Controller 的简写。 Model 代表的是应用的业务逻辑（ 通过JavaBean，  
 EJB 组件实现）， View 是应用的表示面（ 由 JSP 页面产生）， Controller 是提供应用的处理  
 过程控制（ 一般是一个 Servlet）， 通过这种设计模型把应用逻辑， 处理过程和显示逻辑分成不同  
 的组件实现。 这些组件可以进行交互和重用。 
 
 
-# 22.什么是DAO模式？
+## 什么是DAO模式？
 
 DAO 模式：
 DAO (DataAccessobjects 数据存取对象)是指位于业务逻辑和持久化数据之间实现对持久化数据的访问。  
-通俗来讲，就是将数据库操作都封装起来。
+通俗来讲，就是将数据库操作都封装起来。  
 
-对外提供相应的接口
-在面向对象设计过程中，有一些"套路”用于解决特定问题称为模式。
+对外提供相应的接口  
+在面向对象设计过程中，有一些"套路”用于解决特定问题称为模式。  
 
-DAO 模式提供了访问关系型数据库系统所需操作的接口，将数据访问和业务逻辑分离对上层提供面向对象的数据访问接口。
+DAO 模式提供了访问关系型数据库系统所需操作的接口，将数据访问和业务逻辑分离对上层提供面向对象的数据访问接口。  
 
-从以上 DAO 模式使用可以看出，DAO 模式的优势就在于它实现了两次隔离。
+从以上 DAO 模式使用可以看出，DAO 模式的优势就在于它实现了两次隔离。 
+
 
     1、隔离了数据访问代码和业务逻辑代码。业务逻辑代码直接调用DAO方法即可，完全感觉不到数据库表的存在。
     分工明确，数据访问层代码变化不影响业务逻辑代码,这符合单一职能原则，降低了耦合性，提高了可复用性。
@@ -261,7 +267,7 @@ DAO 模式提供了访问关系型数据库系统所需操作的接口，将数�
     DAO 接口的新实现类即可，原有 MySQ 实现不用修改。这符合 "开-闭" 原则。该原则降低了代码的藕合性，
     提高了代码扩展性和系统的可移植性。
 
-一个典型的DAO 模式主要由以下几部分组成。
+一个典型的DAO 模式主要由以下几部分组成。 
 
     1、DAO接口： 把对数据库的所有操作定义成抽象方法，可以提供多种实现。
     2、DAO 实现类： 针对不同数据库给出DAO接口定义方法的具体实现。
@@ -269,28 +275,28 @@ DAO 模式提供了访问关系型数据库系统所需操作的接口，将数�
     4、数据库连接和关闭工具类： 避免了数据库连接和关闭代码的重复使用，方便修改。 
     
     
-# 23.get和post区别？
+## get和post区别？
     在的HTTP规范中，Post用于上传数据、Get用于请求数据。Post将数据封装在body，Get讲数据直接放在url后面进行传输，
     所以这一点上面get稍微比较不安全，但两者皆是明文传输。Get一般有数据长度的限制，但这个限制并不是Http制定的，
     而是各大浏览器厂商制定的，而post的请求长度有服务端来配置。一般而言post可传输的数据比较大。
     
-# 24.cookies和session的区别？
+## ★cookies和session的区别？
     简单的说，由于HTTP是无状态的，所以设计出两种会话方案。Cookie是客户端的会话技术，Session是服务端的会话技术。
     一个储存在浏览器，一个存储在服务器内存中。Cookie非安全，可窃取到，session安全，不可窃取到。Cookies有大小数
     量的限制，Session限制于服务器的内存。
     
-# 25.如何设置请求的编码以及响应内容的类型？
+## 如何设置请求的编码以及响应内容的类型？
     通过请求对象（ServletRequest）的setCharacterEncoding(String)方法可以设置请求的编码，其实要彻底解决乱码
     问题就应该让页面、服务器、请求和响应、Java程序都使用统一的编码，最好的选择当然是UTF-8；通过响应对象
     （ServletResponse）的setContentType(String)方法可以设置响应内容的类型，当然也可以通过HttpServletResponse
     对象的setHeader(String, String)方法来设置。
 
-# GBK和UTF8编码的区别？
+## GBK和UTF8编码的区别？
 1. GBK包含全部中文字符；UTF-8则包含全世界所有国家需要用到的字符。
 2. GBK是在国家标准GB2312基础上扩容后兼容GB2312的标准（好像还不是国家标准）；  
 而UTF-8编码的文字可以在各国各种支持UTF8字符集的浏览器上显示。
 
-# 26.什么是WebService?
+## 什么是WebService?
     WebService是一种跨编程语言和跨操作系统平台的远程调用技术。
     WebService就是一个应用程序向外界暴露出一个能通过Web进行调用的API，也就是说能用编程的方法通过Web来调用这个
     应用程序。我们把调用这个WebService的应用程序叫做客户端，而把提供这个WebService的应用程序叫做服务端。
