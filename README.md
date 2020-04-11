@@ -36,14 +36,21 @@
   
 - [缓存](https://github.com/valarchie/java_technology_summary/blob/master/NoSql%E7%BC%93%E5%AD%98.md)
 
-
-![Java基础.png](http://assets.processon.com/chart_image/5e8349dfe4b08dc0c3e29c89.png)
+#### Java基础脑图
+![Java基础.png](https://img.hacpai.com/file/2020/04/Java基础-d3d9ba98.png)
+#### 计算机知识脑图
 ![计算机基础知识脑图.png](https://img.hacpai.com/file/2020/04/计算机基础知识脑图-84dba96c.png)
+#### 开发框架脑图
 ![开发框架.png](https://img.hacpai.com/file/2020/04/开发框架-84c50e1a.png)
+#### JVM知识脑图
 ![JVM知识脑图.png](https://img.hacpai.com/file/2020/04/JVM知识脑图-849b139c.png)
+#### 缓存知识脑图
 ![缓存知识脑图.png](https://img.hacpai.com/file/2020/04/缓存知识脑图-c3b30221.png)
+#### MQ知识脑图
 ![MQ知识脑图.png](https://img.hacpai.com/file/2020/04/MQ知识脑图-213d603e.png)
+#### 分布式知识脑图
 ![分布式服务知识脑图.png](https://img.hacpai.com/file/2020/04/分布式服务知识脑图-736fb6f6.png)
+#### ElasticSearch脑图
 ![ElasticSearch知识脑图.png](https://img.hacpai.com/file/2020/04/ElasticSearch知识脑图-3a73fc50.png)
 
 
